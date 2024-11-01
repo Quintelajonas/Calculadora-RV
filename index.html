@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de RV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de RV</h1>
+
+        <form id="calculatorForm">
+            <label for="perfil">Perfil do Promotor:</label>
+            <select id="perfil" name="perfil" onchange="atualizarCampos()">
+                <option value="combo">Especialista Combo</option>
+                <option value="flex">Especialista Flex</option>
+                <option value="misto">Promotor Misto</option>
+            </select>
+
+            <label for="combos">Vendas de Combos:</label>
+            <input type="number" id="combos" name="combos" min="0" required>
+
+            <label for="percentual">Percentual para 2ª Recarga (%):</label>
+            <input type="number" id="percentual" name="percentual" min="0" max="100" required>
+
+            <label for="segundaRec">Quantidade de 2ª Rec:</label>
+            <input type="number" id="segundaRec" name="segundaRec" readonly>
+
+            <label for="flexRecarga">Flex Recarga:</label>
+            <input type="number" id="flexRecarga" name="flexRecarga" min="0" required>
+
+            <label for="flexCartao">Flex Cartão:</label>
+            <input type="number" id="flexCartao" name="flexCartao" min="0" required>
+
+            <label for="flexTotal">Total de Flex:</label>
+            <input type="number" id="flexTotal" name="flexTotal" readonly>
+
+            <button type="button" onclick="calcular()">Calcular</button>
+            <br>
+            <br>
+            <button type="button" class="resetForm" onclick="resetForm()">Resetar</button>
+        </form>
+
+        <div class="result">
+            <p id="resultadoCombo">Total de RV (Combo): R$ 0,00</p>
+            <p id="resultadoFlex">Total de RV (Flex): R$ 0,00</p>
+            <p id="resultadoTotal">Total de RV: R$ 0,00</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
